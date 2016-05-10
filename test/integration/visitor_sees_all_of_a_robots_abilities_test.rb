@@ -1,8 +1,6 @@
 require "test_helper"
 
 class VisitorSeesAllOfARobotsAbilitiesTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
-
   test "visitor sees all of a robots abilities" do
     robot1 = Robot.create(name: "Frank")
     robot2 = Robot.create(name: "Martha")

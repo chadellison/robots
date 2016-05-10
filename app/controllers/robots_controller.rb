@@ -21,6 +21,18 @@ class RobotsController < ApplicationController
     end
   end
 
+  def edit
+    @robot = Robot.find(params[:id])
+  end
+
+  def update
+    robot = Robot.find(params[:id])
+    robot.update(name: robot_params[:name])
+    robot.abilities.delete_all
+    robot.abilities.create(name: robot_params[:abilities])
+    redirect_to root_path
+  end
+
   private
 
   def robot_params
