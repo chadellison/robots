@@ -1,4 +1,4 @@
 <% @robots.each do |robot| %>
-  <%= link_to "#{robot.name}", robot_path(robot.id) %>
+  <%= link_to "#{robot.name}", robot_path(robot.id) %><%= button_to "Edit #{robot.name}", edit_robot_path(robot.id), method: :get %>
 <% end %>
 <%= link_to "Create Robot", new_robot_path %>
